@@ -1,0 +1,25 @@
+{
+  "name": "ddns-action",
+  "version": "0.0.1-alpha",
+  "description": "DDNS(Distributed Domain Name System) update action",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ENS",
+    "CNS",
+    "DDNS",
+    "GitHub",
+    "action",
+    "update"
+  ],
+  "author": "Sergii Bomko <aquila.ua@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "1.2.2",
+    "@actions/github": "2.1.1",
+    "@triplespeeder/ens-updater": "1.9.0",
+    "@truffle/hdwallet-provider": "1.0.31"
+  }
+}

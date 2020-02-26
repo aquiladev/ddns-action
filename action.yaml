@@ -1,0 +1,25 @@
+name: 'Update DDNS'
+description: 'DDNS(Distributed Domain Name System) update action. Currently it supports ENS only.'
+branding:
+  icon: 'edit'
+  color: 'green'
+inputs:
+  mnemonic:
+    description: 'Mnemonic phrase for wallet recovery. Plain PrivateKey can be used as well.'
+    required: true
+  rpc:
+    description: 'Url of RPC APIs.'
+    required: true
+  name:
+    description: 'Distributed domain name. Currently it supports ENS name only. (eg `ddns-action.eth`)'
+    required: true
+  contentHash:
+    description: 'Hash of content. Currently it supports IPFS hash only.'
+    required: true
+  verbose:
+    description: 'Level of verbosity'
+    required: false
+    default: false
+runs:
+  using: 'node12'
+  main: 'index.js'
