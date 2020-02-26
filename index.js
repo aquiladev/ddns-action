@@ -17,8 +17,10 @@ try {
         const payload = JSON.stringify(github.context.payload, undefined, 2);
         console.log(`The event payload: ${payload}`);
       }
+      process.exit(0);
     })
-    .catch(core.setFailed);
+    .catch(error => { throw error });
 } catch (error) {
   core.setFailed(error.message);
+  process.exit(1);
 }

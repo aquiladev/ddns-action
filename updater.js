@@ -26,6 +26,6 @@ module.exports = {
       }
     } catch{ }
 
-    return updater.setContenthash({ contentType: 'ipfs-ns', contentHash, });
+    return updater.setContenthash({ contentType: 'ipfs-ns', contentHash });
   }
 }
