@@ -1,6 +1,7 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require('web3');
-const Updater = require('@triplespeeder/ens-updater/lib')
+const Updater = require('@triplespeeder/ens-updater/lib');
+const core = require('@actions/core');
 
 module.exports = {
   async update(mnemonic, rpc, name, contentHash, verbose) {
@@ -24,7 +25,9 @@ module.exports = {
         console.log(`IPFS hash is up to date, update is not needed ${currentContenthash.hash}`);
         return;
       }
-    } catch { }
+    } catch (error) {
+      core.warning(error);
+    }
 
     return updater.setContenthash({ contentType: 'ipfs-ns', contentHash });
   }
