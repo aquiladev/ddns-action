@@ -11,7 +11,7 @@ try {
   const verbose = (core.getInput('verbose') === 'true');
 
   updater.update(mnemonic, rpc, name, contentHash, verbose)
-    .then(_ => {
+    .then(() => {
       if (verbose) {
         // Get the JSON webhook payload for the event that triggered the workflow
         const payload = JSON.stringify(github.context.payload, undefined, 2);

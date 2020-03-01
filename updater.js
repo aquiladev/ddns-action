@@ -24,7 +24,7 @@ module.exports = {
         console.log(`IPFS hash is up to date, update is not needed ${currentContenthash.hash}`);
         return;
       }
-    } catch{ }
+    } catch { }
 
     return updater.setContenthash({ contentType: 'ipfs-ns', contentHash });
   }

@@ -4,7 +4,8 @@
   "description": "DDNS(Distributed Domain Name System) update action",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint index.js && jest",
+    "lint": "eslint *.js"
   },
   "keywords": [
     "ENS",
@@ -21,5 +22,12 @@
     "@actions/github": "2.1.1",
     "@triplespeeder/ens-updater": "1.9.0",
     "@truffle/hdwallet-provider": "1.0.31"
-  }
+  },
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "jest": "25.1.0"
+  },
+  "eslintIgnore": [
+    "*.test.js"
+  ]
 }
