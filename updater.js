@@ -3,8 +3,18 @@ const Web3 = require('web3');
 const Updater = require('@triplespeeder/ens-updater/lib');
 const core = require('@actions/core');
 
+const supportedTLDs = ['.eth'];
+
 module.exports = {
   async update(mnemonic, rpc, name, contentHash, verbose) {
+    if (!name) {
+      throw new Error('Name is unknown or empty');
+    }
+
+    if (!supportedTLDs.find(tld => name.endsWith(tld))) {
+      throw new Error('Not supported TLD');
+    }
+
     const provider = new HDWalletProvider(mnemonic, rpc);
     const web3 = new Web3(provider);
 
