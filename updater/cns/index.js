@@ -1,4 +1,4 @@
-const HDWalletProvider = require("@truffle/hdwallet-provider");
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
 
 const registryABI = require('./registry.json');
@@ -9,7 +9,7 @@ const registry = '0xD1E5b0FF1287aA9f9A268759062E4Ab08b9Dacbe';
 const ipfsKey = 'ipfs.html.value';
 
 function CNS(options) {
-  const { mnemonic, rpc, name, contentHash, verbose } = options;
+  const { mnemonic, rpc, name, verbose } = options;
 
   const provider = new HDWalletProvider(mnemonic, rpc);
   const web3 = new Web3(provider);
@@ -42,7 +42,7 @@ function CNS(options) {
       .call({ from: provider.addresses[0] });
   }
 
-  this.setContenthash = async () => {
+  this.setContenthash = async ({ contentHash }) => {
     const tokenId = namehash(name);
     const resolverContract = await getResolverContract(tokenId);
 

@@ -11,7 +11,7 @@ function namehash(domain, parent, prefix = true) {
 }
 
 function childhash(parent, label, options = { prefix: true }) {
-  parent = parent.replace(/^0x/, "");
+  parent = parent.replace(/^0x/, '');
   const childHash = sha3(label);
   const mynode = sha3(Buffer.from(parent + childHash, 'hex'));
   return (options.prefix ? '0x' : '') + mynode;
