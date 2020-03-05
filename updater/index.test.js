@@ -1,4 +1,4 @@
-const updater = require('./updater');
+const updater = require('./');
 
 test('throws when unknown name', async () => {
   await expect(updater.update({}))

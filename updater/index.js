@@ -44,7 +44,7 @@ module.exports = {
 
     const { name, contentHash } = options;
     const factory = tldMap.find(tld => name.endsWith(tld.name));
-    const updater = factory(options);
+    const updater = await factory(options);
 
     let currentContenthash;
     try {
