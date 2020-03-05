@@ -11,7 +11,7 @@ async function run() {
     const contentHash = core.getInput('contentHash');
     const verbose = (core.getInput('verbose') === 'true');
 
-    await updater.update(mnemonic, rpc, name, contentHash, verbose)
+    await updater.update({ mnemonic, rpc, name, contentHash, verbose })
       .catch(error => { throw error });
 
     if (verbose) {
