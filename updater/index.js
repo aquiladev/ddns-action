@@ -27,7 +27,7 @@ module.exports = {
     validate(options);
 
     const { name, contentHash } = options;
-    const factory = tldMap.find(tld => name.endsWith(tld.name));
+    const { factory } = tldMap.find(tld => name.endsWith(tld.name));
     const updater = await factory(options);
 
     let currentContenthash;
