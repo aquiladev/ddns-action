@@ -1,7 +1,9 @@
 # ddns-action
 DDNS(Distributed Domain Name System) update action. Currently it supports ENS and CNS.
 
-![ddns action](/assets/ddns-action.png)
+<p align="center">
+  <img width="400" src="assets/ddns-action.png" alt="ddns action">
+</p>
 
 ## Inputs
 Parameter     |Required |Description
