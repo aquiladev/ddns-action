@@ -1,5 +1,5 @@
 # ddns-action
-DDNS(Distributed Domain Name System) update action.
+DDNS(Distributed Domain Name System) update action. Currently it supports ENS and CNS.
 
 ## Inputs
 
@@ -13,7 +13,7 @@ DDNS(Distributed Domain Name System) update action.
 
 ### `name`
 
-**Required** Distributed domain name. Currently it supports ENS name only. (eg `ddns-action.eth`)
+**Required** Distributed domain name. Currently it supports ENS, CNS (.eth, .crypto) names. (eg `ddns-action.eth`, `ddns-action.crypto`)
 
 ### `contentHash`
 
