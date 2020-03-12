@@ -25,6 +25,4 @@ with:
   contentHash: ${{ steps.upload.outputs.hash }}
 ```
 
-## Medium
-1. [ENS update automation](https://medium.com/@sergiibomko/ens-update-automation-25c9e706b9d2)
-2. [CNS update automation](https://medium.com/@sergiibomko/cns-update-automation-be559ba2cbc4)
+## [Documentation](https://github.com/aquiladev/ddns-action/wiki)
