@@ -25,4 +25,5 @@ with:
   contentHash: ${{ steps.upload.outputs.hash }}
 ```
 
-## [Documentation](https://github.com/aquiladev/ddns-action/wiki)
+## [>> Documentation](https://github.com/aquiladev/ddns-action/wiki)
+Take a look [DApps Delivery Guide](https://dapps-delivery-guide.readthedocs.io/)
