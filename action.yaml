@@ -21,7 +21,7 @@ inputs:
     required: false
     default: 'ipfs-ns'
   dryRun: 
-    description: 'Type of content.'
+    description: 'Execution emulation without setting new content hash.'
     required: false
     default: false
   verbose:
