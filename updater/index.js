@@ -32,7 +32,7 @@ module.exports = {
   async update(options) {
     validate(options);
 
-    const { name, contentHash, contentType } = options;
+    const { name, contentHash, contentType, verbose } = options;
     const { factory } = tldMap.find(tld => name.endsWith(tld.name));
     const updater = await factory(options);
 
@@ -40,13 +40,18 @@ module.exports = {
     try {
       current = await updater.getContenthash();
       if (current.hash === contentHash) {
-        console.log(`Content hash is up to date. [#${current.hash}]`);
+        console.log(`Content hash is up to date. [${current.hash}]`);
         return;
       }
     } catch (error) {
       core.warning(error);
     }
 
-    return updater.setContenthash({ contentType, contentHash });
+    const result = await updater.setContenthash({ contentType, contentHash });
+    if (verbose) {
+      console.log(result);
+    }
+
+    return result;
   }
 }
