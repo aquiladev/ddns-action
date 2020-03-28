@@ -35,6 +35,10 @@ function CNS(options) {
   }
 
   this.getContenthash = async () => {
+    if (verbose) {
+      console.log('Getting content...')
+    }
+
     const tokenId = namehash(name);
     const resolverContract = await getResolverContract(tokenId);
 
@@ -42,7 +46,11 @@ function CNS(options) {
       .call({ from: provider.addresses[0] });
   }
 
-  this.setContenthash = async ({ contentHash }) => {
+  this.setContenthash = async ({ contentHash, contentType }) => {
+    if (contentType !== 'ipfs-ns') {
+      throw new Error('ContentType is not supported. CNS supports only ipfs-ns');
+    }
+
     const tokenId = namehash(name);
     const resolverContract = await getResolverContract(tokenId);
 

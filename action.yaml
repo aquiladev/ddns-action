@@ -14,8 +14,16 @@ inputs:
     description: 'Distributed domain name. Currently it supports ENS, CNS (.eth, .crypto) names. (eg `ddns-action.eth`)'
     required: true
   contentHash:
-    description: 'Hash of content. Currently it supports IPFS hash only.'
+    description: 'Hash of content.'
     required: true
+  contentType:
+    description: 'Type of content. Supported types [ipfs-ns, swarm-ns]'
+    required: false
+    default: 'ipfs-ns'
+  dryRun: 
+    description: 'Type of content.'
+    required: false
+    default: false
   verbose:
     description: 'Level of verbosity'
     required: false

@@ -3,7 +3,7 @@ const Web3 = require('web3');
 const Updater = require('@triplespeeder/ens-updater/lib');
 
 module.exports = async (options) => {
-  const { mnemonic, rpc, name, verbose } = options;
+  const { mnemonic, rpc, name, dryrun, verbose } = options;
   const provider = new HDWalletProvider(mnemonic, rpc);
   const web3 = new Web3(provider);
 
@@ -11,8 +11,8 @@ module.exports = async (options) => {
     web3,
     ensName: name,
     controllerAddress: provider.addresses[0],
-    verbose: verbose || false,
-    dryrun: false
+    dryrun,
+    verbose: verbose || false
   };
   const updater = new Updater();
   await updater.setup(updaterOptions);
