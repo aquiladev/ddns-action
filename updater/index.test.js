@@ -27,7 +27,7 @@ test('throws when contentType is not supported', async () => {
     .rejects.toThrow('ContentType is not supported');
 });
 
-describe.only('Updater: Integration tests', () => {
+describe.skip('Updater: Integration tests', () => {
   test('Upload IPSF content hash to ETH name', async () => {
     await updater.update({
       mnemonic: process.env.DEV_PKEY,
