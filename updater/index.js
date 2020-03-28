@@ -3,12 +3,14 @@ const core = require('@actions/core');
 const ensFactory = require('./ens');
 const CNS = require('./cns');
 
+const supportedTypes = ['ipfs-ns', 'swarm-ns'];
+
 const tldMap = [
   { name: '.eth', factory: ensFactory },
   { name: '.crypto', factory: (options) => { return new CNS(options) } }
 ]
 
-function validate({ name, contentHash }) {
+function validate({ name, contentHash, contentType }) {
   if (!name) {
     throw new Error('Name is unknown or empty');
   }
@@ -20,27 +22,31 @@ function validate({ name, contentHash }) {
   if (!contentHash) {
     throw new Error('ContentHash is unknown or empty');
   }
+
+  if (!supportedTypes.find(type => type === contentType)) {
+    throw new Error('ContentType is not supported');
+  }
 }
 
 module.exports = {
   async update(options) {
     validate(options);
 
-    const { name, contentHash } = options;
+    const { name, contentHash, contentType } = options;
     const { factory } = tldMap.find(tld => name.endsWith(tld.name));
     const updater = await factory(options);
 
-    let currentContenthash;
+    let current;
     try {
-      currentContenthash = await updater.getContenthash();
-      if (currentContenthash.hash === contentHash) {
-        console.log(`IPFS hash is up to date, update is not needed ${currentContenthash.hash}`);
+      current = await updater.getContenthash();
+      if (current.hash === contentHash) {
+        console.log(`Content hash is up to date. [#${current.hash}]`);
         return;
       }
     } catch (error) {
       core.warning(error);
     }
 
-    return updater.setContenthash({ contentType: 'ipfs-ns', contentHash });
+    return updater.setContenthash({ contentType, contentHash });
   }
 }

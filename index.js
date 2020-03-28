@@ -9,9 +9,11 @@ async function run() {
     const rpc = core.getInput('rpc');
     const name = core.getInput('name');
     const contentHash = core.getInput('contentHash');
+    const contentType = core.getInput('contentType');
+    const dryrun = core.getInput('dryRun');
     const verbose = (core.getInput('verbose') === 'true');
 
-    await updater.update({ mnemonic, rpc, name, contentHash, verbose })
+    await updater.update({ mnemonic, rpc, name, contentHash, contentType, dryrun, verbose })
       .catch(error => { throw error });
 
     if (verbose) {
