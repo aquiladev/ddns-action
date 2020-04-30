@@ -20,6 +20,10 @@ inputs:
     description: 'Type of content. Supported types [ipfs-ns, swarm-ns]'
     required: false
     default: 'ipfs-ns'
+  gasPrice:
+    description: 'Gas price'
+    required: false
+    default: 10000000000
   dryRun: 
     description: 'Execution emulation without setting new content hash.'
     required: false
