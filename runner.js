@@ -21,11 +21,9 @@ async function run() {
       const payload = JSON.stringify(github.context.payload, undefined, 2);
       console.log(`The event payload: ${payload}`);
     }
-    // process.exit(0);
   } catch (error) {
     core.setFailed(error.message);
     throw error;
-    // process.exit(1);
   }
 }
 
