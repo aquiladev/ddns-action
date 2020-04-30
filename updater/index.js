@@ -47,9 +47,10 @@ module.exports = {
       core.warning(error);
     }
 
-    const result = await updater.setContenthash({ contentType, contentHash });
+    const result = await updater.setContenthash({ contentType, contentHash })
+      .catch((err) => { throw err; });
     if (verbose) {
-      console.log(result);
+      console.log(`Tx hash ${result}`);
     }
 
     return result;
