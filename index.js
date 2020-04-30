@@ -10,10 +10,11 @@ async function run() {
     const name = core.getInput('name');
     const contentHash = core.getInput('contentHash');
     const contentType = core.getInput('contentType');
+    const gasPrice = core.getInput('gasPrice');
     const dryrun = core.getInput('dryRun');
     const verbose = (core.getInput('verbose') === 'true');
 
-    await updater.update({ mnemonic, rpc, name, contentHash, contentType, dryrun, verbose })
+    await updater.update({ mnemonic, rpc, name, contentHash, contentType, gasPrice, dryrun, verbose })
       .catch(error => { throw error });
 
     if (verbose) {

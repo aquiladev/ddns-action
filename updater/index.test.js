@@ -1,6 +1,6 @@
 const updater = require('./');
 
-jest.setTimeout(120000);
+jest.setTimeout(300000);
 
 test('throws when unknown name', async () => {
   await expect(updater.update({}))
@@ -27,15 +27,16 @@ test('throws when contentType is not supported', async () => {
     .rejects.toThrow('ContentType is not supported');
 });
 
-describe.skip('Updater: Integration tests', () => {
-  test('Upload IPSF content hash to ETH name', async () => {
+describe('Updater: Integration tests', () => {
+  test.only('Upload IPSF content hash to ETH name', async () => {
     await updater.update({
       mnemonic: process.env.DEV_PKEY,
       rpc: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
       name: 'ddns-action.eth',
-      contentHash: 'QmRJFpRntf1EMgmC5Tm3Rzc438PRrYCMYZPb6nD4DeaNH6',
+      contentHash: 'QmVNV5FVbmEDxG4JeWZc6LtU6gcaF2zbS2JMoPAcNmB1uX',
       contentType: 'ipfs-ns',
-      dryrun: true,
+      gasPrice: 8000000000,
+      dryrun: false,
       verbose: true
     });
   });

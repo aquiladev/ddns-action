@@ -9,7 +9,7 @@ const registry = '0xD1E5b0FF1287aA9f9A268759062E4Ab08b9Dacbe';
 const ipfsKey = 'ipfs.html.value';
 
 function CNS(options) {
-  const { mnemonic, rpc, name, dryrun, verbose } = options;
+  const { mnemonic, rpc, name, gasPrice, dryrun, verbose } = options;
 
   const provider = new HDWalletProvider(mnemonic, rpc);
   const web3 = new Web3(provider);
@@ -59,7 +59,7 @@ function CNS(options) {
     }
 
     return resolverContract.methods.set(ipfsKey, contentHash, tokenId)
-      .send({ from: provider.addresses[0] });
+      .send({ from: provider.addresses[0], gasPrice });
   }
 }
 
