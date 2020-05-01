@@ -9,6 +9,10 @@
     "prune-prod": "npm prune --production",
     "release": "release-it"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aquiladev/ddns-action.git"
+  },
   "keywords": [
     "ENS",
     "CNS",
@@ -19,6 +23,10 @@
   ],
   "author": "Sergii Bomko <aquila.ua@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aquiladev/ddns-action/issues"
+  },
+  "homepage": "https://github.com/aquiladev/ddns-action#readme",
   "dependencies": {
     "@actions/core": "1.2.2",
     "@actions/github": "2.1.1",
