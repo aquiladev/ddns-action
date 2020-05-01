@@ -1,11 +1,13 @@
 {
   "name": "ddns-action",
-  "version": "0.1.2",
+  "version": "0.1.2-delta",
   "description": "DDNS(Distributed Domain Name System) update action",
   "main": "index.js",
   "scripts": {
     "test": "eslint index.js && jest",
-    "lint": "eslint *.js"
+    "lint": "eslint --max-warnings 0 **/*.js",
+    "prune-prod": "npm prune --production",
+    "release": "release-it --no-npm"
   },
   "keywords": [
     "ENS",
@@ -25,7 +27,8 @@
   },
   "devDependencies": {
     "eslint": "6.8.0",
-    "jest": "25.1.0"
+    "jest": "25.1.0",
+    "release-it": "13.5.7"
   },
   "eslintIgnore": [
     "*.test.js"
