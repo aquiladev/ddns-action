@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/aquiladev/ddns-action#readme",
   "dependencies": {
-    "@actions/core": "1.2.2",
+    "@actions/core": "1.2.6",
     "@actions/github": "2.1.1",
     "@triplespeeder/ens-updater": "1.9.0",
     "@truffle/hdwallet-provider": "1.0.42"
