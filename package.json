@@ -2,10 +2,10 @@
   "name": "ddns-action",
   "version": "0.1.2",
   "description": "DDNS(Distributed Domain Name System) update action",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "eslint index.js && jest",
-    "lint": "eslint --max-warnings 0 **/*.js",
+    "test": "eslint ./src/index.js && jest",
+    "lint": "eslint --max-warnings 0 ./src/**/*.js",
     "prune-prod": "npm prune --production",
     "release": "release-it"
   },
@@ -30,8 +30,9 @@
   "dependencies": {
     "@actions/core": "1.2.6",
     "@actions/github": "2.1.1",
-    "@triplespeeder/ens-updater": "1.9.0",
-    "@truffle/hdwallet-provider": "1.0.42"
+    "content-hash": "^2.5.2",
+    "ethers": "^5.4.7",
+    "uns": "git+https://github.com/unstoppabledomains/uns.git#2ea6fc9a65e96e9c517e3756c26ef785a2c66a38"
   },
   "devDependencies": {
     "eslint": "6.8.0",
