@@ -1,5 +1,5 @@
 # ddns-action
-DDNS(Distributed Domain Name System) update action. Currently it supports ENS and CNS.
+DDNS(Distributed Domain Name System) update action. Currently it supports ENS, CNS and UNS.
 
 <p align="center">
   <img width="400" src="assets/ddns-action.png" alt="ddns action">
@@ -10,7 +10,7 @@ Parameter     |Required |Description
 ---           |---      |---
 `mnemonic`    |Yes      |Mnemonic phrase for wallet recovery. Plain PrivateKey can be used as well.
 `rpc`         |Yes      |Url of RPC APIs.
-`name`        |Yes      |Distributed domain name. Currently it supports ENS, CNS (.eth, .crypto) names. (eg `ddns-action.eth`, `ddns-action.crypto`)
+`name`        |Yes      |Distributed domain name. Currently it supports ENS(.eth), CNS(.crypto), UNS(.coin, .wallet, .bitcoin, .x, .888, .nft, .dao, .blockchain) names. (eg `ddns-action.eth`, `ddns-action.crypto`)
 `contentHash` |Yes      |Hash of content..
 `contentType` |No       |Type of content. Supported types [`ipfs-ns`, `swarm-ns`]. Default `ipfs-ns`
 `dryRun`      |No       |Execution emulation without setting new content hash. Default `false`
@@ -21,6 +21,7 @@ Provider  |ipfs-ns  |swarm-ns
 ---       |---      |---
 ENS       |Yes      |Yes
 CNS       |Yes      |No
+UNS       |Yes      |No
 
 ## Example usage
 

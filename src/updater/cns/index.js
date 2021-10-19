@@ -1,8 +1,8 @@
 const { ethers } = require('ethers');
 const NetworkConfig = require('uns/uns-config.json');
+const CNSRegistryABI = require('uns/artifacts/abi/CNSRegistry.json');
+const ResolverABI = require('uns/artifacts/abi/Resolver.json');
 
-const registryABI = require('./registry.json');
-const resolverABI = require('./resolver.json');
 const { namehash } = require('../../utils/namehash');
 
 const ipfsKey = 'ipfs.html.value';
@@ -16,7 +16,7 @@ function CNS(options) {
     const { chainId } = await provider.getNetwork();
     const { contracts } = NetworkConfig.networks[chainId];
     const { address } = contracts.CNSRegistry;
-    const registryContract = new ethers.Contract(address, registryABI, provider);
+    const registryContract = new ethers.Contract(address, CNSRegistryABI, provider);
     return registryContract.resolverOf(tokenId);
   }
 
@@ -31,7 +31,7 @@ function CNS(options) {
       throw new Error('Resolver not found');
     }
 
-    return new ethers.Contract(resolver, resolverABI, provider);
+    return new ethers.Contract(resolver, ResolverABI, provider);
   }
 
   this.getContenthash = async () => {

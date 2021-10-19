@@ -1,5 +1,5 @@
 name: 'Update DDNS'
-description: 'DDNS(Distributed Domain Name System) update action. Currently it supports ENS and CNS.'
+description: 'DDNS(Distributed Domain Name System) update action. Currently it supports ENS, CNS and UNS.'
 branding:
   icon: 'edit'
   color: 'green'
@@ -11,7 +11,7 @@ inputs:
     description: 'Url of RPC APIs.'
     required: true
   name:
-    description: 'Distributed domain name. Currently it supports ENS, CNS (.eth, .crypto) names. (eg `ddns-action.eth`)'
+    description: 'Distributed domain name. Currently it supports ENS(.eth), CNS(.crypto), UNS(.coin, .wallet, .bitcoin, .x, .888, .nft, .dao, .blockchain) names. (eg `ddns-action.eth`)'
     required: true
   contentHash:
     description: 'Hash of content.'
