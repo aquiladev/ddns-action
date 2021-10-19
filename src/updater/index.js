@@ -2,12 +2,21 @@ const core = require('@actions/core');
 
 const ENS = require('./ens');
 const CNS = require('./cns');
+const UNS = require('./uns');
 
 const supportedTypes = ['ipfs-ns', 'swarm-ns'];
 
 const tldMap = [
   { name: '.eth', factory: (options) => { return new ENS(options) } },
-  { name: '.crypto', factory: (options) => { return new CNS(options) } }
+  { name: '.crypto', factory: (options) => { return new CNS(options) } },
+  { name: '.coin', factory: (options) => { return new UNS(options) } },
+  { name: '.wallet', factory: (options) => { return new UNS(options) } },
+  { name: '.bitcoin', factory: (options) => { return new UNS(options) } },
+  { name: '.x', factory: (options) => { return new UNS(options) } },
+  { name: '.888', factory: (options) => { return new UNS(options) } },
+  { name: '.nft', factory: (options) => { return new UNS(options) } },
+  { name: '.dao', factory: (options) => { return new UNS(options) } },
+  { name: '.blockchain', factory: (options) => { return new UNS(options) } },
 ]
 
 function validate({ name, contentHash, contentType }) {
