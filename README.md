@@ -1,6 +1,8 @@
 # ddns-action
 DDNS(Distributed Domain Name System) update action. Currently it supports ENS, CNS and UNS.
 
+**WARNING**: The action supports only L1(Ethereum) UNS(including CNS) domains. More information about [L1/L2](https://docs.unstoppabledomains.com/polygon-l2-network/l1-ethereum-vs-l2-polygon-comparison)
+
 <p align="center">
   <img width="400" src="assets/ddns-action.png" alt="ddns action">
 </p>
