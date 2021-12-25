@@ -18,12 +18,19 @@ Parameter     |Required |Description
 `dryRun`      |No       |Execution emulation without setting new content hash. Default `false`
 `verbose`     |No       |Level of verbosity [`false` - quiet, `true` - verbose]. Default `false`
 
-## Content type support map
+## Content type support
 Provider  |ipfs-ns  |swarm-ns
 ---       |---      |---
 ENS       |Yes      |Yes
 CNS       |Yes      |No
 UNS       |Yes      |No
+
+## Network support
+Provider  |Network
+---       |---
+ENS       |Ethereum Mainnet, Ropsten, Rinkeby, Goerli
+CNS       |Ethereum Mainnet, Rinkeby, Goerli, Polygon Mainnet, Mumbai
+UNS       |Ethereum Mainnet, Rinkeby, Goerli, Polygon Mainnet, Mumbai
 
 ## Example usage
 
