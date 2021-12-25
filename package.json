@@ -33,7 +33,7 @@
     "@actions/github": "2.1.1",
     "content-hash": "^2.5.2",
     "ethers": "^5.4.7",
-    "uns": "git+https://github.com/unstoppabledomains/uns.git#2ea6fc9a65e96e9c517e3756c26ef785a2c66a38"
+    "uns": "github:unstoppabledomains/uns#4d054a1d78767fe5d489895a276fea3b900165fe"
   },
   "devDependencies": {
     "eslint": "6.8.0",
